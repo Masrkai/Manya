@@ -32,11 +32,9 @@ func (t *TemplateExec) Execute(name string, data interface{}) (template.HTML, er
 func main() {
 	r := gin.Default()
 
-	// Parse all templates
-	templ := template.Must(template.ParseGlob("templates/*.html"))
-
-	// Add custom function to execute templates by name
-	templ.Funcs(template.FuncMap{
+	// Must create FuncMap BEFORE parsing templates
+	var templ *template.Template
+	templ = template.New("").Funcs(template.FuncMap{
 		"templateExec": func(name string, data interface{}) (template.HTML, error) {
 			var buf bytes.Buffer
 			err := templ.ExecuteTemplate(&buf, name, data)
@@ -46,6 +44,7 @@ func main() {
 			return template.HTML(buf.String()), nil
 		},
 	})
+	templ = template.Must(templ.ParseGlob("templates/*.html"))
 
 	r.SetHTMLTemplate(templ)
 	r.Static("/static", "./tmp")

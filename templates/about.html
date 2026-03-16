@@ -1,0 +1,43 @@
+{{template "base" .}}
+
+{{define "content"}}
+<section>
+    <div class="container">
+        <h2>Architect of <span style="color: var(--accent)">Shadows</span></h2>
+        <p>I build systems that breathe in darkness. No unnecessary illumination, no distracting animations—only purposeful interaction and elegant solutions.</p>
+        
+        <div class="grid" style="margin-top: var(--space-xl);">
+            <div class="card">
+                <h3>The Stack</h3>
+                <p><strong>Go</strong> for unshakeable foundations. <strong>HTMX</strong> for seamless interactivity. <strong>SCSS</strong> for orchestrated style. No JavaScript required.</p>
+            </div>
+            <div class="card">
+                <h3>The Philosophy</h3>
+                <p>Server is the source of truth. Client renders what it's told. Validation happens where data lives. State belongs on the server.</p>
+            </div>
+            <div class="card">
+                <h3>The Aesthetic</h3>
+                <p>Dark themes reduce eye strain and convey sophistication. Gold accents provide warmth without garishness. Typography is the interface.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="alternate">
+    <div class="container">
+        <h2>Capabilities</h2>
+        <p>Systems engineered for resilience, not trends.</p>
+        
+        <div style="margin-top: var(--space-lg);">
+            <div class="card">
+                <h3>Backend Architecture</h3>
+                <p>Go services designed for concurrency and clarity. No bloat, no dependencies that outlive their purpose.</p>
+            </div>
+            <div class="card">
+                <h3>Frontend Minimalism</h3>
+                <p>HTMX enables modern UX without React complexity. Server-rendered HTML, enhanced with selective partial updates.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{{end}}

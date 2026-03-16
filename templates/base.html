@@ -1,0 +1,64 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}} | Elegance in Darkness</title>
+    <meta name="description" content="{{.Description}}">
+    
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10" 
+            integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXjmSfX+giMZRXKU54oAJJdB7" 
+            crossorigin="anonymous"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Compiled SCSS -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="logo" hx-get="/" hx-target="main" hx-push-url="true">◈ VOID</a>
+            <ul class="nav-links">
+                <li>
+                    <a href="/" 
+                       class="{{if eq .ActiveNav "home"}}active{{end}}"
+                       hx-get="/" 
+                       hx-target="main" 
+                       hx-push-url="true">Home</a>
+                </li>
+                <li>
+                    <a href="/about" 
+                       class="{{if eq .ActiveNav "about"}}active{{end}}"
+                       hx-get="/about" 
+                       hx-target="main" 
+                       hx-push-url="true">About</a>
+                </li>
+                <li>
+                    <a href="/contact" 
+                       class="{{if eq .ActiveNav "contact"}}active{{end}}"
+                       hx-get="/contact" 
+                       hx-target="main" 
+                       hx-push-url="true">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main id="main-content">
+        {{template "content" .}}
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Crafted in darkness with <span style="color: var(--accent)">Go</span> & <span style="color: var(--accent)">HTMX</span></p>
+        </div>
+    </footer>
+</body>
+</html>
+{{end}}

@@ -1,0 +1,33 @@
+{{template "base" .}}
+
+{{define "content"}}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Elegance in <span>Darkness</span></h1>
+        <p class="subtitle">Where shadows speak and silence reigns</p>
+        <a href="/about" class="cta" hx-get="/about" hx-target="main" hx-push-url="true">Enter the Void</a>
+    </div>
+</section>
+
+<section class="alternate">
+    <div class="container">
+        <h2>Philosophy</h2>
+        <p>True elegance requires no embellishment. In the absence of light, we find clarity. In silence, we hear truth. This space exists as a testament to minimalism—where every line serves purpose, every shadow tells story.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Server-First</h3>
+                <p>The server holds truth. Client is merely a vessel. No JavaScript frameworks, no client-side state management—pure hypermedia exchange.</p>
+            </div>
+            <div class="card">
+                <h3>Dark by Design</h3>
+                <p>Darkness is not absence but presence. A canvas of infinite depth where gold accents emerge like stars in void.</p>
+            </div>
+            <div class="card">
+                <h3>HTMX Harmony</h3>
+                <p>HTML over the wire. Progressive enhancement through attributes, not scripts. The web as it was meant to be.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{{end}}
